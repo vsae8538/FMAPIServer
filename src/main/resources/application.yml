@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: fm-backoffice
+  profiles:
+    #active: prod
+    active: dev
