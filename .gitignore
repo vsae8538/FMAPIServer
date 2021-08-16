@@ -35,7 +35,7 @@ build/
 /mvnw.cmd
 /.mvn/
 
-### Gradle ###
+# Gradle
 .gradle
 **/build/
 !src/**/build/
