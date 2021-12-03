@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FmBackOfficeApplication {
+public class FMAPIServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FmBackOfficeApplication.class, args);
+        SpringApplication.run(FMAPIServerApplication.class, args);
     }
 
 }

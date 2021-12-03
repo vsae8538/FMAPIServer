@@ -1,6 +1,6 @@
 spring:
   application:
-    name: fm-backoffice
+    name: FMAPIServer
   profiles:
     #active: prod
     active: dev

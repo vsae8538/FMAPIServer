@@ -30,7 +30,7 @@ targetCompatibility = 1.8
 [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
 
-description = """fm BackOffice"""
+description = """FMAPIServer"""
 
 sourceSets {
     main {
@@ -43,7 +43,7 @@ sourceSets {
 }
 
 jar {
-    baseName = 'fm-backoffice'
+    baseName = 'FMAPIServer'
     version = '1.0'
     /* manifest {
         attributes "Manifest-Version": 1.0,
@@ -53,12 +53,12 @@ jar {
 }
 
 bootJar {
-    baseName = 'fm-backoffice'
+    baseName = 'FMAPIServer'
     version =  '1.0'
 }
 
 bootWar {
-    baseName = 'fm-backoffice'
+    baseName = 'FMAPIServer'
     version =  '1.0'
 }
 
@@ -71,23 +71,20 @@ dependencies {
     /* Spring Boot */
     compile("org.springframework.boot:spring-boot-starter-web")
 
-//    /* Spring Security */
-//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.6.RELEASE'
+    /* Spring Security */
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.6.RELEASE'
 //
 //    /* ORM tool */
-//    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.0.0'
-//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.1.6.RELEASE'
-//
-//    /* JWT */
-//    implementation 'io.jsonwebtoken:jjwt-api:0.10.7',
-//            'io.jsonwebtoken:jjwt-impl:0.10.7',
-//            'io.jsonwebtoken:jjwt-jackson:0.10.7'
-//
+    implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
+
+    /* JWT */
+    implementation 'io.jsonwebtoken:jjwt-api:0.10.7',
+            'io.jsonwebtoken:jjwt-impl:0.10.7',
+            'io.jsonwebtoken:jjwt-jackson:0.10.7'
 //    /* DataSource Pool */
-//    compile 'com.alibaba:druid-spring-boot-starter:1.1.17'
-//
-//    /* DataBase API */
-//    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    compile 'com.alibaba:druid-spring-boot-starter:1.1.20'
+    /* DataBase API */
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
 //
 //    /* Tools */
 //    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
@@ -104,8 +101,8 @@ dependencies {
 //    /* Junit */
 //    testCompile('org.springframework.boot:spring-boot-starter-test')
 //
-//    /* Redis */
-//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '1.5.9.RELEASE'
+    /* Redis */
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.0.RELEASE'
 //
 //    /* Logback */
 //    compile group: 'org.codehaus.janino', name: 'janino', version: '2.7.8'
