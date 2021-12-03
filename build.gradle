@@ -103,6 +103,7 @@ dependencies {
 //
     /* Redis */
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.0.RELEASE'
+    implementation group: 'org.apache.commons', name: 'commons-pool2', version: '2.11.1'
 //
 //    /* Logback */
 //    compile group: 'org.codehaus.janino', name: 'janino', version: '2.7.8'
