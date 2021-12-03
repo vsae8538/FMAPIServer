@@ -2,9 +2,11 @@ package com.github.vsae.fm.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -35,6 +37,36 @@ public class RedisUtils {
             e.printStackTrace();
             return false;
         }
+    }
+
+    /**
+     * 判斷緩存中是否有key
+     * @param key
+     * @return
+     */
+    public boolean exists(String key) {
+        return redisTemplate.hasKey(key);
+    }
+
+    /**
+     * 寫入緩存有效
+     * @param key
+     * @param value
+     * @param expireTime
+     * @param timeUnit
+     * @return
+     */
+    public boolean set(String key, Object value, Long expireTime, TimeUnit timeUnit) {
+        boolean result = false;
+        try {
+            ValueOperations<String, Object> operations = redisTemplate.opsForValue();
+            operations.set(key, value);
+            redisTemplate.expire(key, expireTime, timeUnit);
+            result = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     /**

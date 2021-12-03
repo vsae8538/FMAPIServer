@@ -2,10 +2,15 @@
 server:
   port: 8085
 
+#MyBatis
 mybatis:
   type-aliases-package: com.github.vsae.web
   configuration:
     map-underscore-to-camel-case: true
+
+# LOGGING
+logging:
+  max-size: 128MB
 
 spring:
   datasource:
